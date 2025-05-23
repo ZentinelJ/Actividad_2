@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         do {
@@ -9,8 +11,8 @@ public class Main {
             System.out.println("5. Contar personas de género Femenino");
             System.out.println("6. Salir");
             System.out.print("Seleccione una opción: ");
-            opcion = scanner.nextInt();
-            scanner.nextLine();
+            int opcion = scanner.nextInt();
+            variable = scanner.nextLine();
 
             switch (opcion) {
                 case 1:

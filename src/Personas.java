@@ -1,26 +1,25 @@
 public class Personas {
-        private class String nombre;
-        private class String apellido;
-        private class string genero;
-        private class int edad;
 
-        public Personas (string nombre, string apellido, string genero, int edad) {
+        private String nombre;
+        private String apellido;
+        private String genero;
+        private int edad;
+
+        public Personas (String nombre, String apellido, String genero, int edad) {
             this.nombre = nombre;
             this.apellido = apellido;
             this.genero = genero;
         }
 
-        public  string getNombre () {
+        public  String getNombre () {
             return nombre;
         }
 
-        public  string getGenero() {
+        public  String getGenero() {
             return genero;
         }
 
-        public string getEdad () {
-            return  edad;
+        public int getEdad () {
+            return edad;
         }
     }
-
-}

@@ -1,9 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        List<Persona> personas = new ArrayList<>();
+        PersonaService ps = new PersonaService(personas);
+
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
         do {
-            System.out.println("===== MENÚ =====");
+            System.out.println("\n===== MENÚ =====");
             System.out.println("1. Capturar personas");
             System.out.println("2. Mostrar nombre y género");
             System.out.println("3. Calcular promedio de edad");
@@ -11,24 +19,25 @@ public class Main {
             System.out.println("5. Contar personas de género Femenino");
             System.out.println("6. Salir");
             System.out.print("Seleccione una opción: ");
-            int opcion = scanner.nextInt();
-            variable = scanner.nextLine();
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println();
 
             switch (opcion) {
                 case 1:
-                    capturarPersonas();
+                    ps.capturarPersonas(scanner);
                     break;
                 case 2:
-                    mostrarNombreYGenero();
+                    ps.mostarNombreYGenero();
                     break;
                 case 3:
-                    System.out.println("Promedio de edades: " + calcularPromedioEdad());
+                    ps.calcularPromedioEdad();
                     break;
-                case 4:
-                    System.out.println("Cantidad de hombres: " + contarGenero("masculino"));
+                case 4 :
+                    ps.contarGenero("masculino");
                     break;
                 case 5:
-                    System.out.println("Cantidad de mujeres: " + contarGenero("femenino"));
+                    ps.contarGenero("femenino");
                     break;
                 case 6:
                     System.out.println("Saliendo del programa...");
@@ -36,6 +45,7 @@ public class Main {
                 default:
                     System.out.println("Opción inválida.");
             }
+
         } while (opcion != 6);
     }
 }
